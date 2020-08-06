@@ -30,7 +30,7 @@ class ClassPenangkap {
     map['phone'] = phone;
     return map;
 
-    //kjjjk
+    //kjjdsdsdsds
 
   }
 }
