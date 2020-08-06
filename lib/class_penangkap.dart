@@ -32,5 +32,7 @@ class ClassPenangkap {
 
     //kjjdsdsdsds
 
+    //dsdsdsdsds
+
   }
 }
