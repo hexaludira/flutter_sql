@@ -9,4 +9,15 @@ class AccessDatabase{
     var todoDatabase = openDatabase(path, version: 1, onCreate: _createDb);
     return todoDatabase;
   }
+
+  void _createDb (Database db, int version) async {
+    await db.execute('''
+      CREATE TABLE contact (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        phone TEXT,
+        date TEXT
+      )
+      ''');
+  }
 }
