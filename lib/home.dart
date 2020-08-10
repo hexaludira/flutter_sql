@@ -10,10 +10,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      CRUD dbHelper = CRUD();
+   CRUD dbHelper = CRUD();
       Future<List<ClassPenangkap>> future;
 
       @override
@@ -24,9 +21,51 @@ class _HomeState extends State<Home> {
 
       void updateListView() {
         setState(() {
-
+          future = dbHelper.getContactList();
         });
       }
+
+      Future<ClassPenangkap> navigateToEntryForm(
+        BuildContext context, ClassPenangkap contact) async {
+          var result = await Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+            return EntryForm(contact);
+          }));
+          return result;
+        }
+
+        Card cardo(ClassPenangkap contact) {
+          
+        }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+     appBar: AppBar(
+       title: Text('Daftar Data-data'),
+     ),
+     body: FutureBuilder<List<ClassPenangkap>>(
+       future: future,
+       builder: (context, snapshot) {
+         if(snapshot.hasData) {
+           return Column(
+             children: snapshot.data.map((todo) => cardo(todo)).toList());
+         } else {
+           return SizedBox();
+         }
+       },
+     ),
+     floatingActionButton: FloatingActionButton(
+       child: Icon(Icons.add),
+       tooltip: 'Tambah Data',
+       onPressed: () async {
+         var contact = await navigateToEntryForm(context, null);
+         if (contact != null) {
+           int result = await dbHelper.insert(contact);
+           if (result > 0) {
+             updateListView();
+           }
+         }
+       }),
 
     );
   }
