@@ -34,7 +34,39 @@ class _HomeState extends State<Home> {
         }
 
         Card cardo(ClassPenangkap contact) {
-          
+          return Card(
+            color: Colors.white,
+            elevation: 2.0,
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.red,
+                child: Icon(Icons.people),
+            ),
+            title: Text(
+              contact.name,
+            ),
+            subtitle: Text(contact.phone.toString()),
+            trailing: GestureDetector(
+              child: Icon(Icons.delete),
+              onTap: () async {
+                int result = await dbHelper.delete(contact);
+                if (result > 0) {
+                  updateListView();
+                }
+              },
+            ),
+            onTap: () async {
+              var contact2 = await navigateToEntryForm(context, contact);
+              if (contact2 != null){
+                int result = await dbHelper.update(contact2);
+                if (result > 0) {
+                  updateListView();
+                }
+              } 
+            },
+            ),
+
+          );
         }
 
   @override
