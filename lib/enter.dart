@@ -47,9 +47,60 @@ class EntryFormState extends State<EntryForm> {
                 ),
               ),
             ),
+            //Telepon
             Padding (
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-              child: ,
+              child: TextField(
+                controller: phoneController,
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  labelText: 'Telepon',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
+            ),
+            //Save Button
+            Padding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: RaisedButton(
+                      color: Theme.of(context).primaryColorDark,
+                      textColor: Theme.of(context).primaryColorLight,
+                      child: Text(
+                        'Save',
+                        textScaleFactor: 1.5,
+                      ),
+                      onPressed: (){
+                        if (contact == null) {
+                          contact = ClassPenangkap(nameController.text, phoneController.text);
+                        } else {
+                          contact.name = nameController.text;
+                          contact.phone = phoneController.text;
+                        }
+                        Navigator.pop(context, contact);
+                      },
+                    ),
+                  ),
+                  Container(width: 5.0,),
+                  Expanded(
+                    child: RaisedButton(
+                      color: Theme.of(context).primaryColorDark,
+                      textColor: Theme.of(context).primaryColorLight,
+                      child: Text(
+                        'Cancel',
+                        textScaleFactor: 1.5,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
