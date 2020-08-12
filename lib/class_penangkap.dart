@@ -1,7 +1,10 @@
 class ClassPenangkap {
   int _id;
-  String _name;
-  String _phone;
+  String _tanggal;
+  String _masalah;
+  String _lokasi;
+  String _status;
+  String _keterangan;
 
   ClassPenangkap(this._name, this._phone);
 
