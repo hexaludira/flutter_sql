@@ -1,41 +1,58 @@
 class ClassPenangkap {
   int _id;
-  String _tanggal;
-  String _masalah;
-  String _lokasi;
+  String _date;
+  String _detail;
+  String _location;
   String _status;
-  String _keterangan;
+  String _remark;
 
-  ClassPenangkap(this._name, this._phone);
+  ClassPenangkap(this._date, this._detail, this._location, this._status, this._remark);
 
   ClassPenangkap.fromMap(Map<String, dynamic> map) {
     this._id = map['id'];
-    this._name = map['name'];
-    this._phone = map['phone'];
+    this._date = map['date'];
+    this._detail = map['detail'];
+    this._location = map['location'];
+    this._status = map['status'];
+    this._remark = map['remark'];
   }
 
   int get id => _id;
-  String get name => _name;
-  String get phone => _phone;
+  String get date => _date;
+  String get detail => _detail;
+  String get location => _location;
+  String get status => _status;
+  String get remark => _remark;
 
-  set name(String value) {
-    _name = value;
+  //setter
+  set date(String value) {
+    _date = value;
   }
 
-  set phone(String value) {
-    _phone = value;
+  set detail(String value) {
+    _detail = value;
+  }
+
+  set location(String value) {
+    _location = value;
+  }
+
+  set status(String value) {
+    _status = value;
+  }
+
+  set remark(String value) {
+    _remark = value;
   }
 
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = Map<String, dynamic>();
-    map['id'] = this._id;
-    map['name'] = name;
-    map['phone'] = phone;
+    map['date'] = this._date;
+    map['detail'] = detail;
+    map['location'] = location;
+    map['status'] = status;
+    map['remark'] = remark;
     return map;
-
-    //kjjdsdsdsds
-
-    //dsdsdsdsds
 
   }
 }

@@ -14,9 +14,11 @@ class AccessDatabase{
     await db.execute('''
       CREATE TABLE contact (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT,
-        phone TEXT,
-        date TEXT
+        date TEXT,
+        detail TEXT,
+        location TEXT,
+        status TEXT,
+        remark TEXT,
       )
       ''');
   }

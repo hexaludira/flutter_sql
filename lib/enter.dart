@@ -15,14 +15,21 @@ class EntryFormState extends State<EntryForm> {
 
   EntryFormState(this.contact);
 
-  TextEditingController nameController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
+  TextEditingController detailController = TextEditingController();
+  TextEditingController locationController = TextEditingController();
+  TextEditingController statusController = TextEditingController();
+  TextEditingController remarkController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     if (contact != null) {
-      nameController.text = contact.name;
-      phoneController.text = contact.phone;
+      dateController.text = contact.date;
+      detailController.text = contact.detail;
+      locationController.text = contact.location;
+      statusController.text = contact.status;
+      remarkController.text = contact.remark;
+
     }
     return Scaffold(
       appBar: AppBar(
@@ -33,28 +40,70 @@ class EntryFormState extends State<EntryForm> {
         padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
         child: ListView(
           children: <Widget>[
-            //nama
+            //Date Text
             Padding (
               padding: EdgeInsets.only(top:20.0, bottom:20.0),
               child: TextField(
-                controller: nameController,
-                keyboardType: TextInputType.text,
+                controller: dateController,
+                keyboardType: TextInputType.datetime,
                 decoration: InputDecoration(
-                  labelText: 'Nama Lengkap',
+                  labelText: 'Date',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                 ),
               ),
             ),
-            //Telepon
+            //Detail text
             Padding (
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
               child: TextField(
-                controller: phoneController,
-                keyboardType: TextInputType.phone,
+                controller: detailController,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: 'Telepon',
+                  labelText: 'Detail problem',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
+            ),
+            //Location text
+            Padding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: TextField(
+                controller: locationController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  labelText: 'Location',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
+            ),
+            //Status text
+            Padding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: TextField(
+                controller:statusController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  labelText: 'Status',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
+            ),
+            //Remark Text
+            Padding(
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: TextField(
+                controller: remarkController,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  labelText: 'Remark',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
@@ -76,10 +125,13 @@ class EntryFormState extends State<EntryForm> {
                       ),
                       onPressed: (){
                         if (contact == null) {
-                          contact = ClassPenangkap(nameController.text, phoneController.text);
+                          contact = ClassPenangkap(dateController.text, detailController.text, locationController.text, statusController.text, remarkController.text);
                         } else {
-                          contact.name = nameController.text;
-                          contact.phone = phoneController.text;
+                          contact.date = dateController.text;
+                          contact.detail = detailController.text;
+                          contact.location = locationController.text;
+                          contact.status = statusController.text;
+                          contact.remark = remarkController.text;
                         }
                         Navigator.pop(context, contact);
                       },

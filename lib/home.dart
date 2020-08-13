@@ -43,9 +43,9 @@ class _HomeState extends State<Home> {
                 child: Icon(Icons.people),
             ),
             title: Text(
-              contact.name,
+              contact.date,
             ),
-            subtitle: Text(contact.phone.toString()),
+            subtitle: Text(contact.detail.toString()),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {
