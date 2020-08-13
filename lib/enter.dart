@@ -45,7 +45,7 @@ class EntryFormState extends State<EntryForm> {
               padding: EdgeInsets.only(top:20.0, bottom:20.0),
               child: TextField(
                 controller: dateController,
-                keyboardType: TextInputType.datetime,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                   labelText: 'Date',
                   border: OutlineInputBorder(

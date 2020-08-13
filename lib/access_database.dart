@@ -18,8 +18,8 @@ class AccessDatabase{
         detail TEXT,
         location TEXT,
         status TEXT,
-        remark TEXT,
-      )
+        remark TEXT
+        )
       ''');
   }
 }
