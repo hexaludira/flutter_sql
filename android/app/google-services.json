@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "875125281558",
+    "firebase_url": "https://metal-app-833c7.firebaseio.com",
+    "project_id": "metal-app-833c7",
+    "storage_bucket": "metal-app-833c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875125281558:android:c10309da30307c68d8b637",
+        "android_client_info": {
+          "package_name": "com.example.login_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875125281558-kr03ugaqskfpdhfl5hv888gr2p85cmaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw8jPED0pnSzq4YWWrV1FVgUKt8cSLXM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875125281558-kr03ugaqskfpdhfl5hv888gr2p85cmaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
