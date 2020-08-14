@@ -39,13 +39,13 @@ class _HomeState extends State<Home> {
             elevation: 2.0,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.red,
-                child: Icon(Icons.people),
+                backgroundColor: Colors.blueGrey[300],
+                child: Icon(Icons.chrome_reader_mode),
             ),
             title: Text(
               contact.date,
             ),
-            subtitle: Text(contact.detail.toString()),
+            subtitle: Text(contact.detail.toString() + " || " + contact.location.toString()),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {
