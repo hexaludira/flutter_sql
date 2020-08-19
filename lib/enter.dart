@@ -12,7 +12,7 @@ class EntryForm extends StatefulWidget {
 
 class EntryFormState extends State<EntryForm> {
   String _valPerbaikan;
-  List _listStatus = ["Already fixed","In Progress"];
+  var _listStatus = ["Already fixed","In Progress"];
 
   ClassPenangkap contact;
 
@@ -95,14 +95,29 @@ class EntryFormState extends State<EntryForm> {
                       errorStyle: TextStyle(color: Colors.redAccent, fontSize: 16.0),
                       hintText: 'Repair Status',
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))),
-                    isEmpty: _val == '',
-                    child: ,
+                    isEmpty: _valPerbaikan == '',
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        hint: Text('Repair Status'),
+                        value: _valPerbaikan,
+                        isDense: true,
+                        onChanged: (String newValue) {
+                          setState(() {
+                            _valPerbaikan = newValue;
+                            state.didChange(newValue);
+                          });
+                        },
+                        items: _listStatus.map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                      ),
+                    ),
                   );
-                    
-                    
-
-                  ),
                 },
+              ),
             ),
             //Status Dropdown
             // Padding(
