@@ -34,6 +34,7 @@ class _HomeState extends State<Home> {
         }
 
         Card cardo(ClassPenangkap contact) {
+          // if (contact.status == )
           return Card(
             color: Colors.white,
             elevation: 2.0,

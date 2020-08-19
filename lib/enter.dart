@@ -11,6 +11,9 @@ class EntryForm extends StatefulWidget {
 }
 
 class EntryFormState extends State<EntryForm> {
+  String _valPerbaikan;
+  List _listStatus = ["Already fixed","In Progress"];
+
   ClassPenangkap contact;
 
   EntryFormState(this.contact);
@@ -82,20 +85,58 @@ class EntryFormState extends State<EntryForm> {
                 ),
               ),
             ),
-            //Status text
+            //formField DropDown
             Padding(
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-              child: TextField(
-                controller:statusController,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  labelText: 'Status',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+              child: FormField<String>(
+                builder: (FormFieldState<String> state) {
+                  return InputDecorator(
+                    decoration: InputDecoration(
+                      errorStyle: TextStyle(color: Colors.redAccent, fontSize: 16.0),
+                      hintText: 'Repair Status',
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))),
+                    isEmpty: _val == '',
+                    child: ,
+                  );
+                    
+                    
+
                   ),
-                ),
-              ),
+                },
             ),
+            //Status Dropdown
+            // Padding(
+            //   padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+            //   child: DropdownButton(
+            //     hint: Text("Repair status"),
+            //     value: _valPerbaikan,
+            //     items: _listStatus.map((value){
+            //       return DropdownMenuItem(
+            //         child: Text(value),
+            //         value: value,
+            //       );
+            //     }).toList(),
+            //     onChanged: (value) {
+            //       setState(() {
+            //         _valPerbaikan = value;
+            //       });
+            //     }
+            //   ),
+            // ),
+            //Status text
+            // Padding(
+            //   padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+            //   child: TextField(
+            //     controller:statusController,
+            //     keyboardType: TextInputType.text,
+            //     decoration: InputDecoration(
+            //       labelText: 'Status',
+            //       border: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(5.0),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             //Remark Text
             Padding(
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
