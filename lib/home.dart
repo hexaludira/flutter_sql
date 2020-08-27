@@ -10,6 +10,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  
   CRUD dbHelper = CRUD();
   Future<List<ClassPenangkap>> future;
   AlertDialog alert;
@@ -34,7 +35,8 @@ class _HomeState extends State<Home> {
         int result = await dbHelper.delete(contact);
         if (result > 0) {
           updateListView();
-        } 
+        }
+        Navigator.pop(context); 
 
       },
       child: Text("Alrighty"),
@@ -85,10 +87,10 @@ class _HomeState extends State<Home> {
           child: Icon(Icons.chrome_reader_mode),
         ),
         title: Text(
-          contact.date,
+          contact.date + " @ " + contact.location.toString(),
         ),
         subtitle: Text(
-            contact.detail.toString() + " || " + contact.location.toString()),
+            contact.detail.toString() + " || " +  contact.status.toString()),
         trailing: GestureDetector(
           child: Icon(Icons.delete),
           onTap: () {

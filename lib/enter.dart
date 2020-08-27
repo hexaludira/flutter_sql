@@ -11,7 +11,7 @@ class EntryForm extends StatefulWidget {
 }
 
 class EntryFormState extends State<EntryForm> {
-  String _valPerbaikan;
+  var _valPerbaikan;
   var _listStatus = ["Already fixed","In Progress"];
 
   ClassPenangkap contact;
@@ -21,7 +21,7 @@ class EntryFormState extends State<EntryForm> {
   TextEditingController dateController = TextEditingController();
   TextEditingController detailController = TextEditingController();
   TextEditingController locationController = TextEditingController();
-  TextEditingController statusController = TextEditingController();
+  //TextEditingController statusController = TextEditingController();
   TextEditingController remarkController = TextEditingController();
 
   @override
@@ -30,7 +30,7 @@ class EntryFormState extends State<EntryForm> {
       dateController.text = contact.date;
       detailController.text = contact.detail;
       locationController.text = contact.location;
-      statusController.text = contact.status;
+      //statusController.text = contact.status;
       remarkController.text = contact.remark;
 
     }
@@ -101,10 +101,12 @@ class EntryFormState extends State<EntryForm> {
                         hint: Text('Repair Status'),
                         value: _valPerbaikan,
                         isDense: true,
+                      
                         onChanged: (String newValue) {
                           setState(() {
                             _valPerbaikan = newValue;
                             state.didChange(newValue);
+                          
                           });
                         },
                         items: _listStatus.map((String value) {
@@ -181,12 +183,12 @@ class EntryFormState extends State<EntryForm> {
                       ),
                       onPressed: (){
                         if (contact == null) {
-                          contact = ClassPenangkap(dateController.text, detailController.text, locationController.text, statusController.text, remarkController.text);
+                          contact = ClassPenangkap(dateController.text, detailController.text, locationController.text, _valPerbaikan, remarkController.text);
                         } else {
                           contact.date = dateController.text;
                           contact.detail = detailController.text;
                           contact.location = locationController.text;
-                          contact.status = statusController.text;
+                          contact.status = _valPerbaikan;
                           contact.remark = remarkController.text;
                         }
                         Navigator.pop(context, contact);
