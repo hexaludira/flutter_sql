@@ -14,6 +14,7 @@ class _HomeState extends State<Home> {
   CRUD dbHelper = CRUD();
   Future<List<ClassPenangkap>> future;
   AlertDialog alert;
+  ClassPenangkap contact;
 
   @override
   void initState() {
@@ -27,8 +28,8 @@ class _HomeState extends State<Home> {
     });
   }
 
-  showAlertDialog(BuildContext context) {
-    ClassPenangkap contact;
+  showAlertDialog(BuildContext context, ClassPenangkap contact) {
+    
     //button OK
     Widget yesButton = FlatButton(
       onPressed: () async {
@@ -95,7 +96,7 @@ class _HomeState extends State<Home> {
           child: Icon(Icons.delete),
           onTap: () {
             //show alert dialog
-            showAlertDialog(context);
+            showAlertDialog(context, contact);
             // int result = await dbHelper.delete(contact);
             // if (result > 0) {
             //   updateListView();
