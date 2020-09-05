@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "276387518247",
+    "firebase_url": "https://hexa-flutter.firebaseio.com",
+    "project_id": "hexa-flutter",
+    "storage_bucket": "hexa-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276387518247:android:1992389baaf7d260f67b02",
+        "android_client_info": {
+          "package_name": "com.example.login_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276387518247-eis411ru1ounamp1arh7nfbiq2u3mhnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDauwmJs2VTlhl2eDUOuVa3uhNghKFrIgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276387518247-eis411ru1ounamp1arh7nfbiq2u3mhnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276387518247:android:24cdadb7ac6da711f67b02",
+        "android_client_info": {
+          "package_name": "com.hexa.hexaflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276387518247-4gi17d8cin8aapif71k0re88is4fogil.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hexa.hexaflutter",
+            "certificate_hash": "83cab029dfc10bb7408ee6c4417e890b1974dd82"
+          }
+        },
+        {
+          "client_id": "276387518247-eis411ru1ounamp1arh7nfbiq2u3mhnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDauwmJs2VTlhl2eDUOuVa3uhNghKFrIgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276387518247-eis411ru1ounamp1arh7nfbiq2u3mhnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

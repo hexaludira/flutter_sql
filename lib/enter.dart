@@ -46,9 +46,27 @@ class EntryFormState extends State<EntryForm> {
         padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
         child: ListView(
           children: <Widget>[
-            BasicDateField(),
             //Date Text
-            // Padding (
+            Padding (
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              child: DateTimeField(
+                format: DateFormat('dd-MMM-yyyy'), 
+                onShowPicker: (context, currentValue){
+                  return showDatePicker(
+                    context: context, 
+                    initialDate: DateTime.now(), 
+                    firstDate: DateTime(2019), 
+                    lastDate: DateTime(2025)
+                  );
+                },
+                controller: dateController,
+                decoration: InputDecoration(
+                  labelText: 'Date',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
             //   padding: EdgeInsets.only(top:20.0, bottom:20.0),
             //   child: TextField(
             //     controller: dateController,
@@ -60,7 +78,7 @@ class EntryFormState extends State<EntryForm> {
             //       ),
             //     ),
             //   ),
-            // ),
+             ),
 
             //Detail text
             Padding (
@@ -225,25 +243,25 @@ class EntryFormState extends State<EntryForm> {
   }
 }
 
-class BasicDateField extends StatelessWidget {
-  final format = DateFormat("dd-MMM-yyyy");
-  @override
-  Widget build(BuildContext context) {
-    return Column (children: <Widget>[
-      Text('Basic date field (${format.pattern})'),
-      DateTimeField(
-        format: format, 
-        onShowPicker: (context, currentValue){
-          return showDatePicker(
-            context: context, 
-            initialDate: null, 
-            firstDate: DateTime(2019), 
-            lastDate: DateTime(2030));
-        },
-        ),
-    ]);
-  }
-}
+// class BasicDateField extends StatelessWidget {
+//   final format = DateFormat("dd-MMM-yyyy");
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column (children: <Widget>[
+//       Text('Basic date field (${format.pattern})'),
+//       DateTimeField(
+//         format: format, 
+//         onShowPicker: (context, currentValue){
+//           return showDatePicker(
+//             context: context, 
+//             initialDate: null, 
+//             firstDate: DateTime(2019), 
+//             lastDate: DateTime(2030));
+//         },
+//         ),
+//     ]);
+//   }
+// }
 
 // class DateTimeForm extends StatefulWidget {
 //   @override
