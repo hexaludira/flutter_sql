@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
     return Card(
       color: Colors.white,
       elevation: 2.0,
-      child: ListTile(
+      child:  ListTile(
         leading: CircleAvatar(
           backgroundColor: Colors.blueGrey[300],
           child: Icon(Icons.chrome_reader_mode),
@@ -113,6 +113,7 @@ class _HomeState extends State<Home> {
           }
         },
       ),
+     
     );
   }
 
@@ -126,7 +127,7 @@ class _HomeState extends State<Home> {
         future: future,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return Column(
+            return ListView(
                 children: snapshot.data.map((todo) => cardo(todo)).toList());
           } else {
             return SizedBox();
