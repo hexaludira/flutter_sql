@@ -137,10 +137,15 @@ class _HomeState extends State<Home> {
         },
       ),
       bottomNavigationBar: new BottomAppBar(
+        color: Colors.blueGrey,
         shape: CircularNotchedRectangle(),
         child : new Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        )
+          children: <Widget>[
+            IconButton(icon: Icon(Icons.save), onPressed: null)
+          ],
+        ),
+        
       ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
