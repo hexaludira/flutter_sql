@@ -28,6 +28,7 @@ class _HomeState extends State<Home> {
     });
   }
 
+  //Alert dialog for deleting
   showAlertDialog(BuildContext context, ClassPenangkap contact) {
     
     //button OK
@@ -102,6 +103,7 @@ class _HomeState extends State<Home> {
             //   updateListView();
             // }
           },
+          
         ),
         onTap: () async {
           var contact2 = await navigateToEntryForm(context, contact);
@@ -134,6 +136,12 @@ class _HomeState extends State<Home> {
           }
         },
       ),
+      bottomNavigationBar: new BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        child : new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        )
+      ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           tooltip: 'Tambah Data',
@@ -146,6 +154,7 @@ class _HomeState extends State<Home> {
               }
             }
           }),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
